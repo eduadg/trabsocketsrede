@@ -11,6 +11,10 @@ const server = net.createServer((socket) => {
   socket.on('end', () => {
     console.log('Cliente desconectado.');
   });
+
+  socket.on('error', (err) => {
+    console.error('Erro de socket:', err);
+  });
 });
 
 const PORT = 1234;
